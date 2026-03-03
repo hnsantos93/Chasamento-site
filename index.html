@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chasamento | Thainá & Henrique</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+    --bege: #f5f1ea;
+    --preto: #1a1a1a;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: var(--preto);
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+}
+
+section {
+    padding: 80px 20px;
+}
+
+.bege {
+    background-color: var(--bege);
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+    margin: 0 0 30px 0;
+}
+
+h1 {
+    font-size: clamp(34px, 6vw, 48px);
+}
+
+h2 {
+    font-size: clamp(26px, 5vw, 32px);
+}
+
+.texto {
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.9;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.btn {
+    margin-top: 40px;
+    padding: 16px 40px;
+    border: 1px solid var(--preto);
+    background: transparent;
+    text-decoration: none;
+    color: var(--preto);
+    font-size: 12px;
+    letter-spacing: 2px;
+    display: inline-block;
+    min-width: 220px;
+}
+
+.btn:active {
+    background-color: var(--bege);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+/* Desktop adjustments */
+@media(min-width: 768px) {
+
+    section {
+        padding: 110px 40px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+    }
+
+    .grid img {
+        height: 320px;
+    }
+
+    .texto {
+        font-size: 17px;
+    }
+}
+
+footer {
+    padding: 50px 20px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+</style>
+</head>
+
+<body>
+
+<section>
+    <h1>Chasamento</h1>
+
+    <div class="texto">
+        No dia 30 de maio de 2026 vamos celebrar algo simples, mas profundamente especial.<br><br>
+
+        A união de Thainá e Henrique.<br><br>
+
+        E a chegada de um novo amor que já transforma tudo ao nosso redor.<br><br>
+
+        Nosso Chasamento nasce da mistura de duas celebrações: casamento e chá revelação.<br><br>
+
+        Não será um evento grandioso.<br>
+        Será íntimo.<br>
+        Será leve.<br>
+        Será verdadeiro.<br><br>
+
+        Um momento para reunir quem faz parte da nossa história e compartilhar o início da nossa família.
+    </div>
+</section>
+
+<section class="bege">
+    <h2>Thainá & Henrique</h2>
+    <div class="texto">
+        30 de maio de 2026<br>
+        Mairinque – SP
+    </div>
+</section>
+
+<section>
+    <h2>O Grande Dia</h2>
+    <div class="texto">
+        Chácara Madeira – Mairinque
+    </div>
+
+    <a class="btn" href="#" target="_blank">
+    ABRIR ROTA NO WAZE
+    </a>
+</section>
+
+<section class="bege">
+    <h2>Momentos</h2>
+
+    <div class="grid">
+        <img src="foto1.jpg" alt="">
+        <img src="foto2.jpg" alt="">
+        <img src="foto3.jpg" alt="">
+        <img src="foto4.jpg" alt="">
+    </div>
+</section>
+
+<section>
+    <h2>Se desejar nos presentear</h2>
+    <div class="texto">
+        Sua presença é o nosso maior presente.<br><br>
+        Mas, se quiser contribuir com o início da nossa nova fase, deixamos abaixo nossa chave PIX.
+        <br><br>
+        <strong>SUA_CHAVE_PIX_AQUI</strong>
+    </div>
+</section>
+
+<footer>
+    30.05.2026 — Thainá & Henrique
+</footer>
+
+</body>
+</html>
