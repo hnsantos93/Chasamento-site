@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -158,7 +159,7 @@ transform:scale(1.08);
 100%{transform:translateX(-50%);}
 }
 
-/* LISTA PRESENTES */
+/* GRID PRESENTES */
 
 .grid{
 display:grid;
@@ -193,6 +194,26 @@ margin-bottom:8px;
 
 .presente strong{
 font-size:16px;
+}
+
+form{
+max-width:500px;
+margin:auto;
+text-align:left;
+}
+
+input,select{
+width:100%;
+padding:12px;
+margin:10px 0 20px 0;
+border:1px solid #ccc;
+font-family:Inter;
+}
+
+footer{
+padding:40px;
+font-size:14px;
+opacity:.7;
 }
 
 @media(min-width:768px){
@@ -321,6 +342,45 @@ ABRIR NO GOOGLE MAPS
 
 </section>
 
+<!-- RSVP -->
+
+<section>
+
+<h2>Confirme sua presença</h2>
+
+<div class="texto" style="margin-bottom:40px;">
+Pedimos que confirme sua presença até 30 de abril de 2026.
+</div>
+
+<form
+action="https://docs.google.com/forms/d/e/1FAIpQLSeLvmaR9FoAJ-mjTsG1pxSAH9hI2olYU3StLgxI73xNL-zElA/formResponse"
+method="POST"
+target="_blank">
+
+<label>Nome Completo</label>
+<input type="text" name="entry.57682793" required>
+
+<label>Você poderá comparecer?</label>
+<select name="entry.1775683232">
+<option>Sim</option>
+<option>Não</option>
+</select>
+
+<label>Quantas pessoas irão com você?</label>
+<select name="entry.470279882_sentinel">
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+</select>
+
+<button class="btn">CONFIRMAR PRESENÇA</button>
+
+</form>
+
+</section>
+
 <!-- LISTA DE PRESENTES -->
 
 <section>
@@ -330,7 +390,7 @@ ABRIR NO GOOGLE MAPS
 <div class="texto" style="margin-bottom:50px">
 
 Sua presença é o nosso maior presente ❤️<br><br>
-Mas se quiser contribuir com a nossa nova fase (e dar boas risadas junto), criamos uma lista nada tradicional:
+Mas se quiser contribuir com a nossa nova fase (e dar boas risadas junto), criamos uma lista nada tradicional.
 
 </div>
 
@@ -339,42 +399,36 @@ Mas se quiser contribuir com a nossa nova fase (e dar boas risadas junto), criam
 <div class="presente">
 <img src="lista_presente_1.jfif" onclick="abrirModal('00020126590014BR.GOV.BCB.PIX0111425916218700222Investimento em fralda520400005303986540580.005802BR5925HENRIQUE NASCIMENTO SANTO6009SAO PAULO6226052239EuAjGzNvGgejmKLkVNca6304754C')">
 <h3>Investimento em fralda</h3>
-<p>Essencial para a nova integrante da casa.</p>
 <strong>R$ 80</strong>
 </div>
 
 <div class="presente">
 <img src="lista_presente_2.jfif" onclick="abrirModal('00020126630014BR.GOV.BCB.PIX0111425916218700226Curso para troca de fralda5204000053039865406120.005802BR5925HENRIQUE NASCIMENTO SANTO6009SAO PAULO622605221UEnGS8HRjo7EViqL0rcBS6304B35D')">
 <h3>Curso para troca de fralda pro papai</h3>
-<p>Treinamento intensivo.</p>
 <strong>R$ 120</strong>
 </div>
 
 <div class="presente">
 <img src="lista_presente_3.jfif" onclick="abrirModal('00020126330014BR.GOV.BCB.PIX0111425916218705204000053039865406160.005802BR5925HENRIQUE NASCIMENTO SANTO6009SAO PAULO622605222n69GseKkqaaVHsTE45J5r6304FACB')">
 <h3>Voucher de massagem para a mamãe</h3>
-<p>Porque ela merece.</p>
 <strong>R$ 160</strong>
 </div>
 
 <div class="presente">
 <img src="lista_presente_4.jfif" onclick="abrirModal('00020126640014BR.GOV.BCB.PIX0111425916218700227Treino militar para os pais5204000053039865406200.005802BR5925HENRIQUE NASCIMENTO SANTO6009SAO PAULO622605227TeIDhLL7WZUV8tD9o7rxB630491EE')">
 <h3>Treino militar para pais de primeira viagem</h3>
-<p>Preparação nível elite.</p>
 <strong>R$ 200</strong>
 </div>
 
 <div class="presente">
 <img src="lista_presente_5.jfif" onclick="abrirModal('00020126690014BR.GOV.BCB.PIX0111425916218700232Plano de doutrinacao corinthiana5204000053039865406300.005802BR5925HENRIQUE NASCIMENTO SANTO6009SAO PAULO622605221KifOOY0YTpAo1nA0nZLjg6304C013')">
 <h3>Plano de doutrinação corinthiana</h3>
-<p>Começa desde o berço.</p>
 <strong>R$ 300</strong>
 </div>
 
 <div class="presente">
 <img src="lista_presente_6.jfif" onclick="abrirModal('00020126720014BR.GOV.BCB.PIX0111425916218700235Carrinho de corrida para os treinos5204000053039865406500.005802BR5925HENRIQUE NASCIMENTO SANTO6009SAO PAULO622605224LadET2UiWq65qYzQmKrv96304870F')">
 <h3>Carrinho de corrida</h3>
-<p>Para os treinos em família.</p>
 <strong>R$ 500</strong>
 </div>
 
@@ -425,25 +479,19 @@ document.getElementById('pixModal').style.display='none'
 function copiarPix(){
 
 const texto=document.getElementById('pixCode')
-
 navigator.clipboard.writeText(texto.value)
-
 alert("Código PIX copiado!")
 
 }
 
-/* animação ao rolar */
-
 const sections=document.querySelectorAll("section")
 
 const observer=new IntersectionObserver(entries=>{
-
 entries.forEach(entry=>{
 if(entry.isIntersecting){
 entry.target.classList.add("visible")
 }
 })
-
 },{threshold:0.15})
 
 sections.forEach(section=>{
