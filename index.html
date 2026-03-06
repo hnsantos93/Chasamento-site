@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +18,7 @@
 body{
 margin:0;
 font-family:'Inter',sans-serif;
-background:#ffffff;
+background:#fff;
 color:var(--preto);
 text-align:center;
 -webkit-font-smoothing:antialiased;
@@ -53,6 +52,49 @@ line-height:1.9;
 font-weight:300;
 font-size:16px;
 }
+
+footer{
+padding:50px 20px;
+font-size:14px;
+letter-spacing:1px;
+}
+
+/* HERO */
+
+.hero{
+position:relative;
+height:65vh;
+min-height:420px;
+overflow:hidden;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.hero img{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.hero-overlay{
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.25);
+}
+
+.hero-content{
+position:relative;
+color:#fff;
+}
+
+.hero-content h1{
+font-size:clamp(38px,6vw,60px);
+margin-bottom:10px;
+}
+
+/* BOTÕES */
 
 .btn{
 margin-top:20px;
@@ -89,76 +131,30 @@ justify-content:center;
 }
 }
 
-footer{
-padding:50px 20px;
-font-size:14px;
-letter-spacing:1px;
-}
-
-/* HERO */
-
-.hero{
-position:relative;
-height:90vh;
-overflow:hidden;
-display:flex;
-align-items:center;
-justify-content:center;
-}
-
-.hero img{
-position:absolute;
-width:100%;
-height:100%;
-object-fit:cover;
-filter:brightness(.7);
-}
-
-.hero-text{
-position:relative;
-color:white;
-text-align:center;
-}
-
-.hero-text h1{
-font-size:clamp(40px,7vw,70px);
-margin-bottom:10px;
-}
-
-.hero-text p{
-letter-spacing:3px;
-font-size:18px;
-}
-
-/* CARROSSEL */
+/* CARROSSEL MOMENTOS */
 
 .carousel{
 overflow:hidden;
 position:relative;
-margin-top:40px;
+width:100%;
 }
 
 .carousel-track{
 display:flex;
-gap:20px;
-width:max-content;
-animation:scroll 40s linear infinite;
+width:calc(250px * 16);
+animation:scroll 35s linear infinite;
 }
 
 .carousel img{
+width:250px;
 height:320px;
-width:auto;
-border-radius:4px;
 object-fit:cover;
+margin-right:20px;
 }
 
 @keyframes scroll{
-from{
-transform:translateX(0);
-}
-to{
-transform:translateX(-50%);
-}
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
 }
 
 /* PRESENTES */
@@ -166,26 +162,16 @@ transform:translateX(-50%);
 .grid{
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:20px;
-max-width:1000px;
+gap:15px;
+max-width:1100px;
 margin:auto;
-}
-
-@media(min-width:768px){
-.grid{
-grid-template-columns:repeat(4,1fr);
-}
-}
-
-.presente{
-text-align:center;
 }
 
 .presente img{
 width:100%;
 height:260px;
 object-fit:cover;
-transition:transform .4s;
+transition:.4s;
 }
 
 .presente img:hover{
@@ -195,7 +181,7 @@ transform:scale(1.05);
 .presente h3{
 font-family:'Playfair Display',serif;
 font-size:18px;
-margin:20px 0 10px 0;
+margin:20px 0 10px;
 }
 
 .presente p{
@@ -209,11 +195,23 @@ font-size:16px;
 letter-spacing:1px;
 }
 
+@media(min-width:768px){
+
+section{
+padding:110px 40px;
+}
+
+.grid{
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
-
 
 <!-- HERO -->
 
@@ -221,15 +219,20 @@ letter-spacing:1px;
 
 <img src="Momentos_1.jfif">
 
-<div class="hero-text">
-<h1>Chasamento</h1>
-<p>Thainá & Henrique</p>
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+<h1>Thainá & Henrique</h1>
+<p>30 de maio de 2026</p>
 </div>
 
 </section>
 
+<!-- TEXTO -->
 
 <section>
+
+<h1>Chasamento</h1>
 
 <div class="texto">
 
@@ -252,19 +255,23 @@ Um momento para reunir quem faz parte da nossa história e compartilhar o iníci
 
 </section>
 
+<!-- DATA -->
 
 <section class="bege">
 
 <h2>Thainá & Henrique</h2>
 
 <div class="texto">
+
 30 de maio de 2026<br>
 às 14h<br>
 Mairinque – SP
+
 </div>
 
 </section>
 
+<!-- LOCAL -->
 
 <section>
 
@@ -288,6 +295,7 @@ ABRIR NO GOOGLE MAPS
 
 </section>
 
+<!-- MOMENTOS -->
 
 <section class="bege">
 
@@ -303,6 +311,9 @@ ABRIR NO GOOGLE MAPS
 <img src="Momentos_5.jfif">
 <img src="Momentos_6.jfif">
 <img src="Momentos_7.jfif">
+<img src="Momentos_8.jfif">
+
+<!-- duplicadas para loop -->
 
 <img src="Momentos_2.jfif">
 <img src="Momentos_3.jfif">
@@ -310,6 +321,7 @@ ABRIR NO GOOGLE MAPS
 <img src="Momentos_5.jfif">
 <img src="Momentos_6.jfif">
 <img src="Momentos_7.jfif">
+<img src="Momentos_8.jfif">
 
 </div>
 
@@ -317,14 +329,18 @@ ABRIR NO GOOGLE MAPS
 
 </section>
 
+<!-- PRESENTES -->
 
 <section>
 
 <h2>Lista de Presentes</h2>
 
-<div class="texto" style="margin-bottom:50px;">
+<div class="texto" style="margin-bottom:50px">
+
 Sua presença é o nosso maior presente ❤️<br><br>
+
 Mas se quiser contribuir com a nossa nova fase (e dar boas risadas junto), criamos uma lista nada tradicional:
+
 </div>
 
 <div class="grid">
@@ -349,17 +365,15 @@ Mas se quiser contribuir com a nossa nova fase (e dar boas risadas junto), criam
 
 </section>
 
-
 <footer>
 
 30.05.2026 — Thainá & Henrique
 
 </footer>
 
-
 <!-- MODAL PIX -->
 
-<div id="pixModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);align-items:center;justify-content:center;z-index:999;">
+<div id="pixModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);align-items:center;justify-content:center;z-index:999;">
 
 <div style="background:#fff;padding:40px 30px;max-width:420px;width:90%;text-align:center;position:relative;">
 
@@ -367,7 +381,7 @@ Mas se quiser contribuir com a nossa nova fase (e dar boas risadas junto), criam
 
 <h3 style="font-family:'Playfair Display',serif;">Pagamento via PIX</h3>
 
-<img id="qrCode" src="" style="width:220px;margin:20px 0;">
+<img id="qrCode" style="width:220px;margin:20px 0;">
 
 <textarea id="pixCode" readonly style="width:100%;height:90px;font-size:12px;padding:10px;"></textarea>
 
@@ -376,7 +390,6 @@ Mas se quiser contribuir com a nossa nova fase (e dar boas risadas junto), criam
 </div>
 
 </div>
-
 
 <script>
 
