@@ -25,7 +25,6 @@ font-family:'Inter',sans-serif;
 background:#fff;
 color:var(--preto);
 text-align:center;
--webkit-font-smoothing:antialiased;
 }
 
 section{
@@ -49,14 +48,6 @@ font-family:'Playfair Display',serif;
 margin:0 0 30px 0;
 }
 
-h1{
-font-size:clamp(34px,6vw,48px);
-}
-
-h2{
-font-size:clamp(26px,5vw,32px);
-}
-
 .texto{
 max-width:700px;
 margin:auto;
@@ -65,18 +56,9 @@ font-weight:300;
 font-size:16px;
 }
 
-footer{
-padding:50px 20px;
-font-size:14px;
-letter-spacing:1px;
-}
-
-/* HERO */
-
 .hero{
 position:relative;
 height:65vh;
-min-height:420px;
 overflow:hidden;
 display:flex;
 align-items:center;
@@ -113,8 +95,6 @@ font-size:clamp(38px,6vw,60px);
 margin-bottom:10px;
 }
 
-/* BOTÕES */
-
 .btn{
 margin-top:20px;
 padding:16px 40px;
@@ -150,11 +130,8 @@ justify-content:center;
 }
 }
 
-/* CARROSSEL MOMENTOS */
-
 .carousel{
 overflow:hidden;
-position:relative;
 width:100%;
 }
 
@@ -181,12 +158,12 @@ transform:scale(1.08);
 100%{transform:translateX(-50%);}
 }
 
-/* PRESENTES */
+/* LISTA PRESENTES */
 
 .grid{
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:15px;
+gap:20px;
 max-width:1100px;
 margin:auto;
 }
@@ -195,7 +172,8 @@ margin:auto;
 width:100%;
 height:260px;
 object-fit:cover;
-transition:transform .6s ease;
+transition:.5s;
+cursor:pointer;
 }
 
 .presente img:hover{
@@ -205,29 +183,26 @@ transform:scale(1.08);
 .presente h3{
 font-family:'Playfair Display',serif;
 font-size:18px;
-margin:20px 0 10px;
+margin:15px 0 5px;
 }
 
 .presente p{
 font-size:14px;
-font-weight:300;
-margin-bottom:10px;
+margin-bottom:8px;
 }
 
 .presente strong{
 font-size:16px;
-letter-spacing:1px;
 }
 
 @media(min-width:768px){
 
-section{
-padding:110px 40px;
+.grid{
+grid-template-columns:repeat(3,1fr);
 }
 
-.grid{
-grid-template-columns:repeat(4,1fr);
-gap:25px;
+section{
+padding:110px 40px;
 }
 
 }
@@ -240,16 +215,13 @@ gap:25px;
 <!-- HERO -->
 
 <section class="hero">
-
 <img src="Momentos_1.jfif">
-
 <div class="hero-overlay"></div>
 
 <div class="hero-content">
 <h1>Thainá & Henrique</h1>
 <p>30 de maio de 2026</p>
 </div>
-
 </section>
 
 <!-- TEXTO -->
@@ -326,7 +298,6 @@ ABRIR NO GOOGLE MAPS
 <h2>Momentos</h2>
 
 <div class="carousel">
-
 <div class="carousel-track">
 
 <img src="Momentos_2.jfif">
@@ -346,12 +317,11 @@ ABRIR NO GOOGLE MAPS
 <img src="Momentos_8.jfif">
 
 </div>
-
 </div>
 
 </section>
 
-<!-- PRESENTES -->
+<!-- LISTA DE PRESENTES -->
 
 <section>
 
@@ -360,7 +330,6 @@ ABRIR NO GOOGLE MAPS
 <div class="texto" style="margin-bottom:50px">
 
 Sua presença é o nosso maior presente ❤️<br><br>
-
 Mas se quiser contribuir com a nossa nova fase (e dar boas risadas junto), criamos uma lista nada tradicional:
 
 </div>
@@ -368,19 +337,45 @@ Mas se quiser contribuir com a nossa nova fase (e dar boas risadas junto), criam
 <div class="grid">
 
 <div class="presente">
+<img src="lista_presente_1.jfif" onclick="abrirModal('00020126590014BR.GOV.BCB.PIX0111425916218700222Investimento em fralda520400005303986540580.005802BR5925HENRIQUE NASCIMENTO SANTO6009SAO PAULO6226052239EuAjGzNvGgejmKLkVNca6304754C')">
+<h3>Investimento em fralda</h3>
+<p>Essencial para a nova integrante da casa.</p>
+<strong>R$ 80</strong>
+</div>
 
-<a href="#" onclick="abrirModal('00020126630014BR.GOV.BCB.PIX0111425916218700226Curso para troca de fralda520400005303986540550.005802BR5925HENRIQUE NASCIMENTO SANTO6009SAO PAULO62250521jRH4r6nLFTJu3osAvZ8Ra6304404B')">
+<div class="presente">
+<img src="lista_presente_2.jfif" onclick="abrirModal('00020126630014BR.GOV.BCB.PIX0111425916218700226Curso para troca de fralda5204000053039865406120.005802BR5925HENRIQUE NASCIMENTO SANTO6009SAO PAULO622605221UEnGS8HRjo7EViqL0rcBS6304B35D')">
+<h3>Curso para troca de fralda pro papai</h3>
+<p>Treinamento intensivo.</p>
+<strong>R$ 120</strong>
+</div>
 
-<img src="fralda.jpg">
+<div class="presente">
+<img src="lista_presente_3.jfif" onclick="abrirModal('00020126330014BR.GOV.BCB.PIX0111425916218705204000053039865406160.005802BR5925HENRIQUE NASCIMENTO SANTO6009SAO PAULO622605222n69GseKkqaaVHsTE45J5r6304FACB')">
+<h3>Voucher de massagem para a mamãe</h3>
+<p>Porque ela merece.</p>
+<strong>R$ 160</strong>
+</div>
 
-</a>
+<div class="presente">
+<img src="lista_presente_4.jfif" onclick="abrirModal('00020126640014BR.GOV.BCB.PIX0111425916218700227Treino militar para os pais5204000053039865406200.005802BR5925HENRIQUE NASCIMENTO SANTO6009SAO PAULO622605227TeIDhLL7WZUV8tD9o7rxB630491EE')">
+<h3>Treino militar para pais de primeira viagem</h3>
+<p>Preparação nível elite.</p>
+<strong>R$ 200</strong>
+</div>
 
-<h3>Curso pro Henrique aprender a trocar fralda</h3>
+<div class="presente">
+<img src="lista_presente_5.jfif" onclick="abrirModal('00020126690014BR.GOV.BCB.PIX0111425916218700232Plano de doutrinacao corinthiana5204000053039865406300.005802BR5925HENRIQUE NASCIMENTO SANTO6009SAO PAULO622605221KifOOY0YTpAo1nA0nZLjg6304C013')">
+<h3>Plano de doutrinação corinthiana</h3>
+<p>Começa desde o berço.</p>
+<strong>R$ 300</strong>
+</div>
 
-<p>Investimento estratégico para noites mais tranquilas.</p>
-
-<strong>R$ 50</strong>
-
+<div class="presente">
+<img src="lista_presente_6.jfif" onclick="abrirModal('00020126720014BR.GOV.BCB.PIX0111425916218700235Carrinho de corrida para os treinos5204000053039865406500.005802BR5925HENRIQUE NASCIMENTO SANTO6009SAO PAULO622605224LadET2UiWq65qYzQmKrv96304870F')">
+<h3>Carrinho de corrida</h3>
+<p>Para os treinos em família.</p>
+<strong>R$ 500</strong>
 </div>
 
 </div>
@@ -399,7 +394,7 @@ Mas se quiser contribuir com a nossa nova fase (e dar boas risadas junto), criam
 
 <div style="background:#fff;padding:40px 30px;max-width:420px;width:90%;text-align:center;position:relative;">
 
-<button onclick="fecharModal()" style="position:absolute;top:10px;right:15px;background:none;border:none;font-size:18px;cursor:pointer;">×</button>
+<button onclick="fecharModal()" style="position:absolute;top:10px;right:15px;border:none;background:none;font-size:20px;cursor:pointer;">×</button>
 
 <h3 style="font-family:'Playfair Display',serif;">Pagamento via PIX</h3>
 
@@ -407,7 +402,7 @@ Mas se quiser contribuir com a nossa nova fase (e dar boas risadas junto), criam
 
 <textarea id="pixCode" readonly style="width:100%;height:90px;font-size:12px;padding:10px;"></textarea>
 
-<button onclick="copiarPix()" class="btn" style="margin-top:15px;">COPIAR CÓDIGO</button>
+<button onclick="copiarPix()" class="btn">COPIAR CÓDIGO</button>
 
 </div>
 
@@ -430,12 +425,10 @@ document.getElementById('pixModal').style.display='none'
 function copiarPix(){
 
 const texto=document.getElementById('pixCode')
-texto.select()
-texto.setSelectionRange(0,99999)
 
 navigator.clipboard.writeText(texto.value)
 
-alert('Código PIX copiado!')
+alert("Código PIX copiado!")
 
 }
 
