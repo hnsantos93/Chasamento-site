@@ -97,11 +97,9 @@ font-size:clamp(38px,6vw,60px);
 margin-bottom:10px;
 }
 
-/* BOTÕES */
-
 .btn{
 margin-top:20px;
-padding:16px 30px;
+padding:16px 40px;
 border:1px solid var(--preto);
 background:transparent;
 text-decoration:none;
@@ -109,8 +107,7 @@ color:var(--preto);
 font-size:12px;
 letter-spacing:2px;
 display:inline-block;
-width:100%;
-max-width:240px;
+min-width:240px;
 transition:.35s;
 }
 
@@ -128,7 +125,33 @@ gap:15px;
 align-items:center;
 }
 
-/* CARROSSEL MOMENTOS */
+/* AJUSTE MOBILE */
+
+@media(max-width:767px){
+
+.grid{
+grid-template-columns:1fr;
+gap:40px;
+padding:0 10px;
+}
+
+.presente img{
+height:240px;
+}
+
+}
+
+@media(min-width:768px){
+
+.grid{
+grid-template-columns:repeat(3,1fr);
+}
+
+section{
+padding:110px 40px;
+}
+
+}
 
 .carousel{
 overflow:hidden;
@@ -172,14 +195,9 @@ margin:auto;
 display:flex;
 flex-direction:column;
 align-items:center;
-justify-content:space-between;
 background:#fff;
 padding:0 0 20px 0;
 height:100%;
-width:100%;
-box-shadow:0 12px 30px rgba(0,0,0,0.08);
-border-radius:10px;
-overflow:hidden;
 }
 
 .presente img{
@@ -199,6 +217,11 @@ font-size:18px;
 margin:15px 0 5px;
 }
 
+.presente p{
+font-size:14px;
+margin-bottom:8px;
+}
+
 .presente strong{
 font-size:16px;
 margin-bottom:10px;
@@ -209,23 +232,25 @@ display:block;
 margin-top:auto;
 }
 
-/* MOBILE */
+form{
+max-width:500px;
+margin:auto;
+text-align:left;
+}
 
-@media(max-width:767px){
-
-.grid{
-grid-template-columns:1fr;
-gap:40px;
+input,select{
 width:100%;
+padding:12px;
+margin:10px 0 20px 0;
+border:1px solid #ccc;
+font-family:Inter;
 }
 
-.presente img{
-height:240px;
+footer{
+padding:40px;
+font-size:14px;
+opacity:.7;
 }
-
-}
-
-/* DESKTOP */
 
 @media(min-width:768px){
 
@@ -237,17 +262,6 @@ section{
 padding:110px 40px;
 }
 
-.btn-container{
-flex-direction:row;
-justify-content:center;
-}
-
-}
-
-footer{
-padding:40px;
-font-size:14px;
-opacity:.7;
 }
 
 </style>
@@ -334,7 +348,7 @@ ABRIR NO GOOGLE MAPS
 
 </section>
 
-<!-- LISTA DE PRESENTES -->
+  <!-- LISTA DE PRESENTES -->
 
 <section>
 
@@ -352,45 +366,87 @@ Mas se quiser contribuir com a nossa nova fase (e dar boas risadas junto), criam
 <div class="presente">
 <img src="lista_presente_1.jfif">
 <h3>Investimento em fralda</h3>
-<strong>R$ 80</strong>
-<button class="btn" onclick="abrirModal('PIX1')">🎁 Presentear</button>
+<strong>R$ 80</strong><br>
+<button class="btn" onclick="abrirModal('00020126590014BR.GOV.BCB.PIX0111425916218700222Investimento em fralda520400005303986540580.005802BR5925HENRIQUE NASCIMENTO SANTO6009SAO PAULO6226052239EuAjGzNvGgejmKLkVNca6304754C')">
+🎁 Presentear
+</button>
 </div>
 
 <div class="presente">
 <img src="lista_presente_2.jfif">
 <h3>Curso para troca de fralda pro papai</h3>
-<strong>R$ 120</strong>
-<button class="btn" onclick="abrirModal('PIX2')">🎁 Presentear</button>
+<strong>R$ 120</strong><br>
+<button class="btn" onclick="abrirModal('00020126630014BR.GOV.BCB.PIX0111425916218700226Curso para troca de fralda5204000053039865406120.005802BR5925HENRIQUE NASCIMENTO SANTO6009SAO PAULO622605221UEnGS8HRjo7EViqL0rcBS6304B35D')">
+🎁 Presentear
+</button>
 </div>
 
 <div class="presente">
 <img src="lista_presente_3.jfif">
 <h3>Voucher de massagem para a mamãe</h3>
-<strong>R$ 160</strong>
-<button class="btn" onclick="abrirModal('PIX3')">🎁 Presentear</button>
+<strong>R$ 160</strong><br>
+<button class="btn" onclick="abrirModal('00020126330014BR.GOV.BCB.PIX0111425916218705204000053039865406160.005802BR5925HENRIQUE NASCIMENTO SANTO6009SAO PAULO622605222n69GseKkqaaVHsTE45J5r6304FACB')">
+🎁 Presentear
+</button>
 </div>
 
 <div class="presente">
 <img src="lista_presente_4.jfif">
 <h3>Treino militar para pais de primeira viagem</h3>
-<strong>R$ 200</strong>
-<button class="btn" onclick="abrirModal('PIX4')">🎁 Presentear</button>
+<strong>R$ 200</strong><br>
+<button class="btn" onclick="abrirModal('00020126640014BR.GOV.BCB.PIX0111425916218700227Treino militar para os pais5204000053039865406200.005802BR5925HENRIQUE NASCIMENTO SANTO6009SAO PAULO622605227TeIDhLL7WZUV8tD9o7rxB630491EE')">
+🎁 Presentear
+</button>
 </div>
 
 <div class="presente">
 <img src="lista_presente_5.jfif">
 <h3>Plano de doutrinação corinthiana</h3>
-<strong>R$ 300</strong>
-<button class="btn" onclick="abrirModal('PIX5')">🎁 Presentear</button>
+<strong>R$ 300</strong><br>
+<button class="btn" onclick="abrirModal('00020126690014BR.GOV.BCB.PIX0111425916218700232Plano de doutrinacao corinthiana5204000053039865406300.005802BR5925HENRIQUE NASCIMENTO SANTO6009SAO PAULO622605221KifOOY0YTpAo1nA0nZLjg6304C013')">
+🎁 Presentear
+</button>
 </div>
 
 <div class="presente">
 <img src="lista_presente_6.jfif">
 <h3>Carrinho de corrida</h3>
-<strong>R$ 500</strong>
-<button class="btn" onclick="abrirModal('PIX6')">🎁 Presentear</button>
+<strong>R$ 500</strong><br>
+<button class="btn" onclick="abrirModal('00020126720014BR.GOV.BCB.PIX0111425916218700235Carrinho de corrida para os treinos5204000053039865406500.005802BR5925HENRIQUE NASCIMENTO SANTO6009SAO PAULO622605224LadET2UiWq65qYzQmKrv96304870F')">
+🎁 Presentear
+</button>
 </div>
 
+</div>
+
+</section>
+
+<!-- MOMENTOS -->
+
+<section class="bege">
+
+<h2>Momentos</h2>
+
+<div class="carousel">
+<div class="carousel-track">
+
+<img src="Momentos_2.jfif">
+<img src="Momentos_3.jfif">
+<img src="Momentos_4.jfif">
+<img src="Momentos_5.jfif">
+<img src="Momentos_6.jfif">
+<img src="Momentos_7.jfif">
+<img src="Momentos_8.jfif">
+
+<img src="Momentos_2.jfif">
+<img src="Momentos_3.jfif">
+<img src="Momentos_4.jfif">
+<img src="Momentos_5.jfif">
+<img src="Momentos_6.jfif">
+<img src="Momentos_7.jfif">
+<img src="Momentos_8.jfif">
+
+</div>
 </div>
 
 </section>
@@ -400,6 +456,64 @@ Mas se quiser contribuir com a nossa nova fase (e dar boas risadas junto), criam
 30.05.2026 — Thainá & Henrique
 
 </footer>
+
+<!-- MODAL PIX -->
+
+<div id="pixModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);align-items:center;justify-content:center;z-index:999;">
+
+<div style="background:#fff;padding:40px 30px;max-width:420px;width:90%;text-align:center;position:relative;">
+
+<button onclick="fecharModal()" style="position:absolute;top:10px;right:15px;border:none;background:none;font-size:20px;cursor:pointer;">×</button>
+
+<h3 style="font-family:'Playfair Display',serif;">Pagamento via PIX</h3>
+
+<img id="qrCode" style="width:220px;margin:20px 0;">
+
+<textarea id="pixCode" readonly style="width:100%;height:90px;font-size:12px;padding:10px;"></textarea>
+
+<button onclick="copiarPix()" class="btn">COPIAR CÓDIGO</button>
+
+</div>
+
+</div>
+
+<script>
+
+function abrirModal(codigo){
+
+document.getElementById('pixModal').style.display='flex'
+document.getElementById('pixCode').value=codigo
+document.getElementById('qrCode').src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data="+encodeURIComponent(codigo)
+
+}
+
+function fecharModal(){
+document.getElementById('pixModal').style.display='none'
+}
+
+function copiarPix(){
+
+const texto=document.getElementById('pixCode')
+navigator.clipboard.writeText(texto.value)
+alert("Código PIX copiado!")
+
+}
+
+const sections=document.querySelectorAll("section")
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("visible")
+}
+})
+},{threshold:0.15})
+
+sections.forEach(section=>{
+observer.observe(section)
+})
+
+</script>
 
 </body>
 </html>
