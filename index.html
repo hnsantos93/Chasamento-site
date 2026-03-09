@@ -543,7 +543,7 @@ sections.forEach(section=>{
 observer.observe(section)
 })
   
-document.getElementById("rsvpForm").addEventListener("submit", function(e){
+document.getElementById("rsvpForm").addEventListener("submit", function(e){ 
 
 e.preventDefault()
 
@@ -560,6 +560,20 @@ this.reset()
 .catch(error => {
 document.getElementById("msgConfirmacao").innerText = "Erro ao enviar. Tente novamente."
 })
+
+})
+
+const presenca = document.querySelector('select[name="presenca"]')
+const acompanhantes = document.querySelector('input[name="acompanhantes"]')
+
+presenca.addEventListener("change", function(){
+
+if(this.value === "Não"){
+acompanhantes.value = 0
+acompanhantes.disabled = true
+}else{
+acompanhantes.disabled = false
+}
 
 })
 </script>
