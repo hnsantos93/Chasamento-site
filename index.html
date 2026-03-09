@@ -107,7 +107,8 @@ color:var(--preto);
 font-size:12px;
 letter-spacing:2px;
 display:inline-block;
-min-width:240px;
+width:100%;
+max-width:240px;
 transition:.35s;
 }
 
@@ -132,23 +133,15 @@ align-items:center;
 .grid{
 grid-template-columns:1fr;
 gap:40px;
-padding:0 10px;
+padding:0;
+}
+
+.presente{
+width:100%;
 }
 
 .presente img{
 height:240px;
-}
-
-}
-
-@media(min-width:768px){
-
-.grid{
-grid-template-columns:repeat(3,1fr);
-}
-
-section{
-padding:110px 40px;
 }
 
 }
