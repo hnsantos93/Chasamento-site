@@ -447,7 +447,40 @@ Mas se quiser contribuir com a nossa nova fase (e dar boas risadas junto), criam
 </div>
 
 </section>
+  
+<!-- CONFIRMAÇÃO DE PRESENÇA -->
 
+<section>
+
+<h2>Confirmação de Presença</h2>
+
+<div class="texto" style="margin-bottom:40px">
+Para nos ajudar na organização, confirme sua presença.
+</div>
+
+<form id="rsvpForm">
+
+<label>Nome:</label>
+<input type="text" name="nome" required>
+
+<label>Vai comparecer?</label>
+<select name="presenca" required>
+<option value="">Selecione</option>
+<option value="Sim">Sim</option>
+<option value="Não">Não</option>
+</select>
+
+<label>Quantidade de acompanhantes:</label>
+<input type="number" name="acompanhantes" min="0" max="5" value="0">
+
+<button type="submit" class="btn">Confirmar Presença</button>
+
+</form>
+
+<p id="msgConfirmacao" style="margin-top:20px;font-size:14px;"></p>
+
+</section>
+  
 <footer>
 
 30.05.2026 — Thainá & Henrique
@@ -509,7 +542,26 @@ entry.target.classList.add("visible")
 sections.forEach(section=>{
 observer.observe(section)
 })
+  
+document.getElementById("rsvpForm").addEventListener("submit", function(e){
 
+e.preventDefault()
+
+const formData = new FormData(this)
+
+fetch("https://script.google.com/macros/s/AKfycbwnXGmFiafeZ9JXJ7vldwDzpRsdPeR7IWHNouF57YAGbXGBkYyt5DqbN7JsB2h7-zbR/exec", {
+method: "POST",
+body: formData
+})
+.then(response => {
+document.getElementById("msgConfirmacao").innerText = "Obrigado! Sua confirmação foi enviada."
+this.reset()
+})
+.catch(error => {
+document.getElementById("msgConfirmacao").innerText = "Erro ao enviar. Tente novamente."
+})
+
+})
 </script>
 
 </body>
