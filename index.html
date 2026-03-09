@@ -260,7 +260,30 @@ padding:110px 40px;
 }
 
 }
+.msg-confirmacao{
+margin-top:30px;
+padding:20px;
+background:var(--bege);
+border-radius:6px;
+font-size:15px;
+max-width:420px;
+margin-left:auto;
+margin-right:auto;
+line-height:1.6;
+animation:fadeMensagem .6s ease;
+}
 
+@keyframes fadeMensagem{
+from{
+opacity:0;
+transform:translateY(10px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+  
 </style>
 </head>
 
@@ -477,7 +500,7 @@ Para nos ajudar na organização, confirme sua presença.
 
 </form>
 
-<p id="msgConfirmacao" style="margin-top:20px;font-size:14px;"></p>
+<p id="msgConfirmacao" class="msg-confirmacao"></p>
 
 </section>
   
@@ -553,10 +576,23 @@ fetch("https://script.google.com/macros/s/AKfycbwnXGmFiafeZ9JXJ7vldwDzpRsdPeR7IW
 method: "POST",
 body: formData
 })
+  
 .then(response => {
-document.getElementById("msgConfirmacao").innerText = "Obrigado! Sua confirmação foi enviada."
+
+const presenca = document.querySelector('select[name="presenca"]').value
+
+if(presenca === "Sim"){
+document.getElementById("msgConfirmacao").innerText =
+"✔ Presença confirmada! Estamos muito felizes em celebrar esse momento com você ❤️"
+}else{
+document.getElementById("msgConfirmacao").innerText =
+"Obrigado por nos avisar! Você fará falta, mas entendemos. ❤️"
+}
+
 this.reset()
+
 })
+  
 .catch(error => {
 document.getElementById("msgConfirmacao").innerText = "Erro ao enviar. Tente novamente."
 })
