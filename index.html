@@ -568,6 +568,10 @@ observer.observe(section)
   
 document.getElementById("rsvpForm").addEventListener("submit", function(e){ 
 
+const botao = this.querySelector("button")
+botao.disabled = true
+botao.innerText = "Enviando..."
+  
 e.preventDefault()
 
 const formData = new FormData(this)
@@ -586,15 +590,23 @@ document.getElementById("msgConfirmacao").innerText =
 "✔ Presença confirmada! Estamos muito felizes em celebrar esse momento com você ❤️"
 }else{
 document.getElementById("msgConfirmacao").innerText =
-"Obrigado por nos avisar! Você fará falta, mas entendemos. ❤️"
+"Obrigado por nos avisar! Você fará falta, mas entendemos ❤️"
 }
 
 this.reset()
+botao.disabled = false
+botao.innerText = "Confirmar Presença"
 
 })
   
 .catch(error => {
-document.getElementById("msgConfirmacao").innerText = "Erro ao enviar. Tente novamente."
+
+document.getElementById("msgConfirmacao").innerText =
+"Erro ao enviar. Tente novamente."
+
+botao.disabled = false
+botao.innerText = "Confirmar Presença"
+
 })
 
 })
