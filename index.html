@@ -26,6 +26,7 @@ font-family:'Inter',sans-serif;
 background:#fff;
 color:var(--preto);
 text-align:center;
+overflow-x:hidden;
 }
 
 section{
@@ -124,11 +125,32 @@ gap:15px;
 align-items:center;
 }
 
-@media(min-width:768px){
-.btn-container{
-flex-direction:row;
-justify-content:center;
+/* AJUSTE MOBILE */
+
+@media(max-width:767px){
+
+.grid{
+grid-template-columns:1fr;
+gap:40px;
+padding:0 10px;
 }
+
+.presente img{
+height:240px;
+}
+
+}
+
+@media(min-width:768px){
+
+.grid{
+grid-template-columns:repeat(3,1fr);
+}
+
+section{
+padding:110px 40px;
+}
+
 }
 
 .carousel{
