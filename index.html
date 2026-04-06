@@ -264,28 +264,27 @@ padding:110px 40px;
 .trajes-grid{
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:20px;
-max-width:1000px;
+gap:16px;
+max-width:900px;
 margin:auto;
 }
 
 .trajes-grid img{
 width:100%;
-height:240px;
+height:200px; /* menor = não quebra layout */
 object-fit:cover;
 border-radius:10px;
-transition:.4s;
+display:block;
 }
 
-.trajes-grid img:hover{
-transform:scale(1.05);
-}
-
-/* responsivo */
-
+/* desktop */
 @media(min-width:768px){
 .trajes-grid{
 grid-template-columns:repeat(3,1fr);
+}
+
+.trajes-grid img{
+height:180px; /* ainda menor no desktop */
 }
 }
 
