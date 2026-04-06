@@ -306,12 +306,15 @@ padding:0 16px;
 }
 
 .trajes-grid img{
-width:100%;
-height:140px;
-object-fit:cover;
-object-position:center;
-border-radius:10px;
-display:block;
+  width:100%;
+  height:auto;
+  border-radius:12px;
+  display:block;
+  transition: transform .4s ease;
+}
+
+.trajes-grid img:hover{
+  transform: scale(1.05);
 }
 
 /* DESKTOP */
@@ -322,13 +325,11 @@ grid-template-columns:repeat(3,1fr);
 max-width:800px;
 }
 
-.trajes-grid img{
-height:180px;
 }
-
-}
-
 </style>
+
+<style>
+  
 </head>
 
 <body>
