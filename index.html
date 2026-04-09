@@ -311,6 +311,26 @@ transform:translateY(0);
 .trajes-grid img:hover{
   transform:scale(1.05);
 }
+
+.local-imagens{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+  gap:20px;
+  max-width:900px;
+  margin:40px auto 0;
+}
+
+.local-imagens img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border-radius:10px;
+  transition:.4s;
+}
+
+.local-imagens img:hover{
+  transform:scale(1.05);
+}
 </style>
 </head>
 
@@ -390,6 +410,9 @@ ABRIR NO WAZE
 <a class="btn" href="https://maps.app.goo.gl/TNqXA7i34Zpf3EaM6?g_st=ic" target="_blank">
 ABRIR NO GOOGLE MAPS
 </a>
+<div class="local-imagens">
+  <img src="recanto_bela_vista.jfif" alt="Recanto Bela Vista">
+  <img src="chacara_madeira.jfif" alt="Chácara Madeira">
 
 </div>
 
